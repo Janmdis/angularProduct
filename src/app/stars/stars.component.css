@@ -1,0 +1,11 @@
+.start{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: yellow;
+    border: 1px solid #ddd;
+    margin-right: 5px;
+}
+.startEmpty{
+    background: #ddd;
+}

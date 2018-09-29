@@ -1,3 +1,16 @@
-<p>
-  product works!
-</p>
+
+<div *ngFor='let product of products' class="productBox col-md-4">
+  <div class="img-thumbnail" style="margin-bottom:20px;">
+    <img class='img-thumbnail' [src]="urlImg" alt="">
+    <div class="caption">
+      <h4 class="pull-right">
+        <h4><a [routerLink]="['./product',product.id]">{{product.title}}</a></h4>
+        <p style="font-size:16px;">{{product.price}}元</p>
+        <p style="font-size:12px;">{{product.desc}}</p>
+      </h4>
+    </div>
+    <div>
+      <app-stars [rating]='product.rating'></app-stars>
+    </div>
+  </div>
+</div>

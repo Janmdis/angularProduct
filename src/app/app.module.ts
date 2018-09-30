@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { Routes,RouterModule }   from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -12,12 +12,15 @@ import { StarsComponent } from './stars/stars.component';
 import { HomeComponent } from './home/home.component';
 import { ProductDeilComponent } from './product-deil/product-deil.component';
 import { ProductService } from './shared/product.service';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { FilterPipe, } from './pipe/filter.pipe';
+
 
 // 路由
-const routeConfig:Routes=[
-  {path:"",component:HomeComponent},
-  {path:"product/:productId",component:ProductDeilComponent}
-]
+const routeConfig: Routes = [
+  {path: '', component: HomeComponent},
+  {path: 'product/:productId', component: ProductDeilComponent}
+];
 
 @NgModule({
   declarations: [
@@ -29,11 +32,14 @@ const routeConfig:Routes=[
     ProductComponent,
     StarsComponent,
     HomeComponent,
-    ProductDeilComponent
+    ProductDeilComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routeConfig)
+    RouterModule.forRoot(routeConfig),
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]
